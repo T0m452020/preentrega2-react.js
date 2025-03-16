@@ -40,3 +40,23 @@
   .remove-button:hover {
     background-color: #cc0000;
   }
+
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.remove-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}

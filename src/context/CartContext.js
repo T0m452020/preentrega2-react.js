@@ -24,6 +24,26 @@ export function CartProvider({ children }) {
         setCart(cart.filter((item) => item.id !== productId));
     };
 
+    const increaseQuantity = (productId) => {
+        setCart(
+            cart.map((item) =>
+                item.id === productId && item.quantity < 10
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
+            )
+        );
+    };
+
+    const decreaseQuantity = (productId) => {
+        setCart(
+            cart.map((item) =>
+                item.id === productId && item.quantity > 0
+                    ? { ...item, quantity: item.quantity - 1 }
+                    : item
+            )
+        );
+    };
+
     const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
 
     const totalPrice = cart.reduce(
@@ -33,12 +53,11 @@ export function CartProvider({ children }) {
 
     return (
         <CartContext.Provider
-            value={{ cart, addToCart, removeFromCart, cartItemsCount, totalPrice }}
+            value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, cartItemsCount, totalPrice }}
         >
             {children}
         </CartContext.Provider>
     );
 }
 
-// **Esta es la línea que faltaba**
 export const useCart = () => useContext(CartContext);

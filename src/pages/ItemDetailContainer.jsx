@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; 
-import { getProductById } from "../service/mockService";
-import { CartContext } from "../context/CartContext";
+import { getProductsByCategory } from "../service/productService";
+import { getProductById } from "../service/productService";
 
 function ItemDetailContainer() {
     const { itemId } = useParams();
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
-    getProductById(itemId).then((data) => setProduct(data));
-    }, [itemId]);
+        getProductById(itemId).then((data) => setProduct(data));
+        }, [itemId]);
 
     if (!product) return <div>Cargando...</div>;
 

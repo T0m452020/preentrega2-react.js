@@ -1,3 +1,24 @@
+/* Estilos generales */
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.content {
+    flex: 1; 
+    padding: 20px;
+}
+
 .footer {
     background-color: #000;
     color: #fff;
@@ -6,7 +27,7 @@
     font-size: 14px;
     font-weight: 500;
     border-top: 2px solid #fff;
-    margin-top: 40px;
+    margin-top: auto; 
 }
 
 .footer-links {

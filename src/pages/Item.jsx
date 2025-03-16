@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext"; 
-import "./Item.css"; 
+import { useCart } from "../context/CartContext";
+import "./Item.css";
 
-function Item({ product }) {
-  const { addToCart } = useCart(); 
+function Item({ product, quantity, decreaseQuantity, increaseQuantity }) {
+  const { addToCart } = useCart();
 
   return (
     <div className="item-card">
@@ -17,6 +17,21 @@ function Item({ product }) {
           Ver detalle
         </Link>
         <button onClick={() => addToCart(product)}>Añadir al carrito</button>
+        <div className="quantity-controls">
+          <button
+            onClick={() => decreaseQuantity(product.id)}
+            className="quantity-button"
+          >
+            -
+          </button>
+          <span>{quantity}</span>
+          <button
+            onClick={() => increaseQuantity(product.id)}
+            className="quantity-button"
+          >
+            +
+          </button>
+        </div>
       </div>
     </div>
   );
