@@ -6,14 +6,14 @@ import "./NavBar.css"
 function NavBar() {
   return (
     <nav className="nav">
-      <Link to="/deportes" className="logo">
+      <Link to="/" className="logo">
         AdidasStore
       </Link>
       <div className="nav-links">
-        <Link to="/deportes/galeria">Galería</Link>
-        <Link to="/deportes/category/ropa-superior">Ropa Superior</Link>
-        <Link to="/deportes/category/ropa-inferior">Ropa Inferior</Link>
-        <Link to="/deportes/category/zapatillas">Zapatillas</Link>
+        <Link to="/galeria">Galería</Link>
+        <Link to="/category/ropa-superior">Ropa Superior</Link>
+        <Link to="/category/ropa-inferior">Ropa Inferior</Link>
+        <Link to="/category/zapatillas">Zapatillas</Link>
       </div>
       <CartWidget />
     </nav>
